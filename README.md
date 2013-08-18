@@ -34,7 +34,6 @@ Parameters:
  * `fstype` => the type of the filesystem to be mounted (ie, what you would put in `fstab`), unless using nfs when this option can be omitted.
  * `options` => any options to be added to the mount entry
  * `mapfile` => the mapfile used for the mountdir this resource should be mounted in
- * 
  
 ## Example
 
