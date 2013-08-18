@@ -2,7 +2,7 @@
 # Parameters:
 # arguments
 #
-define autofs::mount ($targetdir, $source, $fstype="",$options="", $mapfile) {
+define autofs::mount ($targetdir=$name, $source, $fstype="",$options="", $mapfile) {
 	
 	if ($source ~= "/^\//") {
 		$realsource = ":${source}"
