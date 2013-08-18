@@ -4,7 +4,7 @@
 #
 define autofs::mount ($targetdir=$name, $source, $fstype="",$options="", $mapfile) {
 	
-	if ($source =~ "/^\//") {
+	if ($source =~ /^\//) {
 		$realsource = ":${source}"
 	} else {
 		$realsource = $source
