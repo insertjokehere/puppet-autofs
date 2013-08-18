@@ -10,15 +10,15 @@ define autofs::mount ($targetdir=$name, $source, $fstype="",$options="", $mapfil
 		$realsource = $source
 	}
 
-	#this is probably more complex than it needs to be
-	if ($fstype == "") and ($options=="") {
-		$optstring = ""
+	#todo: templates
+	if ($fstype != "") and ($options !="") {
+		$optstring = "-fstype=${fstype},${options}"
 	} elsif($fstype != "") {
 		$optstring = "-fstype=${fstype}"
 	} elsif($options != "") {
 		$optstring = $options
-	} else {
-		$optstring = "-fstype=${fstype},${options}"
+	} else { 
+		$optstring = ""
 	}
 
 	concat::fragment { "${targetdir}_${source}":
