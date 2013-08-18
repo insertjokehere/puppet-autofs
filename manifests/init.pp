@@ -17,7 +17,7 @@ class autofs {
 		owner => "root",
 		group => "root",
 		mode  => "0644",
-		notify => Service["autofs"]
+		notify => Service["autofs"],
 	}
 
 }

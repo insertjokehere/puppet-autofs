@@ -12,7 +12,14 @@ define autofs::mountdir ($dir=$name, $mapfile, $timeout=2, $options="") {
 
 	concat::fragment { $dir:
 		target => "/etc/autofs.master",
-		content => "${dir}\t${mapfile}\t--timeout=${timeout}${optdelmed}"
+		content => "${dir}\t${mapfile}\t--timeout=${timeout}${optdelmed}\n",
+	}
+
+	concat {$mapfile:
+		owner => "root",
+		group => "root",
+		mode  => "0644",
+		notify => Service["autofs"],
 	}
 
 }
