@@ -11,7 +11,7 @@ define autofs::mountdir ($dir=$name, $mapfile, $timeout=2, $options="") {
 	}
 
 	concat::fragment { $dir:
-		target => "/etc/autofs.master",
+		target => "/etc/auto.master",
 		content => "${dir}\t${mapfile}\t--timeout=${timeout}${optdelmed}\n",
 	}
 

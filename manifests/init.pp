@@ -13,7 +13,7 @@ class autofs {
 		require => Package["autofs"],
 	}
 
-	concat { "/etc/autofs.master":
+	concat { "/etc/auto.master":
 		owner => "root",
 		group => "root",
 		mode  => "0644",
