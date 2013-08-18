@@ -11,7 +11,7 @@ define autofs::mount ($targetdir=$name, $source, $fstype="",$options="", $mapfil
 	}
 
 	#this is probably more complex than it needs to be
-	if ($fstype == "") and ($options="") {
+	if ($fstype == "") and ($options=="") {
 		$optstring = ""
 	} elsif($fstype != "") {
 		$optstring = "-fstype=${fstype}"
