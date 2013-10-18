@@ -21,7 +21,7 @@ define autofs::mount ($targetdir=$name, $source, $fstype="",$options="", $mapfil
 		$optstring = ""
 	}
 
-	concat::fragment { "${targetdir}_${source}":
+	concat::fragment { "${targetdir}_${mapfile}":
 		target => $mapfile,
 		content => "${targetdir}\t${optstring}\t${realsource}\n"
 	}
